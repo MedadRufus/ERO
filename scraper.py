@@ -15,7 +15,7 @@ if __name__ == "__main__":
     result_dict = trip_advisor_page_to_dict(result)
 
     for i in result.item_list_element:
-        print(i.name, ":", i.url)
+        print(i.name, ":", "https://www.tripadvisor.co.uk"+i.url)
 
     # pp = pprint.PrettyPrinter(indent=4)
     # pp.pprint(result_dict)

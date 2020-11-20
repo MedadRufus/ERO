@@ -117,3 +117,5 @@ def trip_advisor_page_from_dict(s: Any) -> TripAdvisorPage:
 
 def trip_advisor_page_to_dict(x: TripAdvisorPage) -> Any:
     return to_class(TripAdvisorPage, x)
+
+

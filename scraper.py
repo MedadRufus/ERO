@@ -1,8 +1,9 @@
 import json
-from json_parser import trip_advisor_page_from_dict,trip_advisor_page_to_dict
-import pprint
+
 import requests
 from bs4 import BeautifulSoup
+
+from json_parser import trip_advisor_page_from_dict, trip_advisor_page_to_dict
 
 if __name__ == "__main__":
 
@@ -10,12 +11,11 @@ if __name__ == "__main__":
     soup = BeautifulSoup(conn.text, 'html.parser')
     data = soup.find('script', type='application/ld+json').contents
 
-
     result = trip_advisor_page_from_dict(json.loads(data[0]))
     result_dict = trip_advisor_page_to_dict(result)
 
     for i in result.item_list_element:
-        print(i.name,":",i.url)
+        print(i.name, ":", i.url)
 
-    #pp = pprint.PrettyPrinter(indent=4)
-    #pp.pprint(result_dict)
+    # pp = pprint.PrettyPrinter(indent=4)
+    # pp.pprint(result_dict)
